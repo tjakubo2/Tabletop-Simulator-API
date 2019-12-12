@@ -1,11 +1,4 @@
-Vector is a class providing a set bla bla bla
-
-20:00 - 20:53
-20:54 - 21:30
-14:00 - 15:10
-20:00 - 
-
-Example usage: `Wait.frames(functionName, 60)`
+Vector, a static global class, provides functions to make working with 3D coordinates easier and less error-prone. It allows using operators to e.g. add or subtract vectors intuitively, and some general math functions covering basic arithmetics and transformations.
 
 !!!tip
     Vector and Color are the first classes to be defined in pure Lua. This means you **have** to use colon operator (e.g. `pos:angle()`) to call member functions, not the dot operator. Failing to do so will fail with cryptic error messages displayed.
@@ -37,6 +30,7 @@ function onLoad()
     print(Vector.min(vec1, vec2)) --> Vector: {0.5, -1. -0}
 end
 ```
+
 ---
 
 !!!tip
@@ -128,7 +122,7 @@ angle([<span class="tag vec"></span>](/types)&nbsp;other) | Returns an angle (in
 heading([<span class="tag str"></span>](/types)&nbsp;axis) | Returns an angle In degrees) of rotation of Vector over a given `axis` (can be `'x'`, `'y'`, `'z'`). | [<span class="tag flo"></span>](/types)
 string([<span class="tag str"></span>](/types)&nbsp;prefix) | Returns a formatted string with Vector components. The `prefix` argument is optional, aiding in output readability. This function is automatically called when you do `print(vec)` or `tostring(vec)`. | [<span class="tag str"></span>](/types)
 
-###Property menothds examples
+###Property methods examples
 
 
 ```lua
