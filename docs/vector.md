@@ -26,7 +26,7 @@ min([<span class="tag vec"></span>](/types)&nbsp;one, [<span class="tag vec"></s
 
 ###Constructors examples
 
-Test
+
 ```lua
 function onLoad()
     local vec1 = Vector.new(0.5, 1, 1.5)
@@ -48,10 +48,10 @@ Apart from being able to access elements using x, y, z and 1, 2, 3 keys directly
 
 Function Name | Description | Return | &nbsp;
 -- | -- | -- | --
-setAt([<span class="tag str"></span>](/types)&nbsp;k, [<span class="tag flo"></span>](/types)&nbsp;value) | Sets a component to value and returns self. | [<span class="tag vec"></span>](/types#vector) (self)
-set(__{x, flo}, __{y, flo}, __{z, flo}) | Sets `x`, `y`, `z` components to given values and returns self. Providing a nil value makes it ignore that argument. | [<span class="tag vec"></span>](/types#vector) (self)
+setAt([<span class="tag str"></span>](/types)&nbsp;k, [<span class="tag flo"></span>](/types)&nbsp;value) | Sets a component to value and returns self. | [<span class="tag vec"></span>](/types#vector) 
+set([<span class="tag flo"></span>](/types)&nbsp;x, [<span class="tag flo"></span>](/types)&nbsp;y, [<span class="tag flo"></span>](/types)&nbsp;z) | Sets `x`, `y`, `z` components to given values and returns self. Providing a nil value makes it ignore that argument. | [<span class="tag vec"></span>](/types#vector) 
 get() | Returns `x`, `y`, `z` components as three separate values. | [<span class="tag flo"></span>](/types), [<span class="tag flo"></span>](/types), [<span class="tag flo"></span>](/types)
-copy() | Returns a separate Vector with identical component values. | [<span class="tag vec"></span>](/types#vector) (new)
+copy() | Returns a separate Vector with identical component values. | [<span class="tag vec"></span>](/types#vector) 
 
 !!!tip
     Before `Vector` was introduced, coordinate tables contained separate values under 1, 2, 3 and x, y, z keys, with letter keys taking precedence when they were different. This is no longer the case, and using letter and numerical keys is equivalent. However, when iterating over Vector components you have to use `pairs` and only letter keys will be read there.
@@ -79,26 +79,27 @@ end
 
 Function Name | Description | Return | &nbsp;
 -- | -- | -- | --
-add([<span class="tag vec"></span>](/types)&nbsp;other) | Adds components of `other` Vector and returns self. | [<span class="tag vec"></span>](/types#vector) (self)
-sub([<span class="tag vec"></span>](/types)&nbsp;other) | Subtracts components of `other` Vector and returns self. | [<span class="tag vec"></span>](/types#vector) (self)
-scale(__{sx, flo}, __{sy, flo}, __{sz, flo}) | Multiplies each component by a factor and returns self. Providing a nil value makes it ignore that argument. | [<span class="tag vec"></span>](/types#vector) (self)
-scale([<span class="tag vec"></span>](/types)&nbsp;other) | Multiplies each component by correspoding component of `other` and returns self. | [<span class="tag vec"></span>](/types#vector) (self)
-scale(flo scale) | Multiplies each component by the same provide factor and returns self. | [<span class="tag vec"></span>](/types#vector) (self)
-inverse() | Scales each component by -1 and returns self. | [<span class="tag vec"></span>](/types#vector) (self)
+add([<span class="tag vec"></span>](/types)&nbsp;other) | Adds components of `other` Vector and returns self. | [<span class="tag vec"></span>](/types#vector) 
+sub([<span class="tag vec"></span>](/types)&nbsp;other) | Subtracts components of `other` Vector and returns self. | [<span class="tag vec"></span>](/types#vector) 
+scale([<span class="tag flo"></span>](/types)&nbsp;sx, [<span class="tag flo"></span>](/types)&nbsp;sy, [<span class="tag flo"></span>](/types)&nbsp;sz) | Multiplies each component by a factor and returns self. Providing a nil value makes it ignore that argument. | [<span class="tag vec"></span>](/types#vector) 
+scale([<span class="tag vec"></span>](/types)&nbsp;other) | Multiplies each component by correspoding component of `other` and returns self. | [<span class="tag vec"></span>](/types#vector) 
+scale([<span class="tag flo"></span>](/types)&nbsp;scale) | Multiplies each component by the same provide factor and returns self. | [<span class="tag vec"></span>](/types#vector) 
+inverse() | Scales each component by -1 and returns self. | [<span class="tag vec"></span>](/types#vector) 
 dot([<span class="tag vec"></span>](/types)&nbsp;other) | Returns a dot product of self and `other`. | [<span class="tag flo"></span>](/types)
-cross([<span class="tag vec"></span>](/types)&nbsp;other) | Returns a new Vector that is a cross product of self and `other`. | [<span class="tag vec"></span>](/types#vector) (new)
-equals([<span class="tag vec"></span>](/types)&nbsp;other, __{margin, flo}) | Returns a boolean whether `other` is similiar enough to self. The `margin` argument is optional and defaults to tolerating a difference of ~0.03 in both vector magnitude. | [<span class="tag boo"></span>](/types)
+cross([<span class="tag vec"></span>](/types)&nbsp;other) | Returns a new Vector that is a cross product of self and `other`. | [<span class="tag vec"></span>](/types#vector) 
+equals([<span class="tag vec"></span>](/types)&nbsp;other, [<span class="tag flo"></span>](/types)&nbsp;margin) | Returns a boolean whether `other` is similiar enough to self. The `margin` argument is optional and defaults to tolerating a difference of ~0.03 in both vector magnitude. | [<span class="tag boo"></span>](/types)
 
 Vector also allows you to use arithmetic operators to performs basic operations:
 
 Operator | Description | Return | &nbsp;
 -- | -- | -- | --
-[<span class="tag vec"></span>](/types)&nbsp;one + [<span class="tag vec"></span>](/types)&nbsp;two | Returns a new Vector that is a sum of `one` and `two` | [<span class="tag vec"></span>](/types#vector) (new)
-[<span class="tag vec"></span>](/types)&nbsp;one - [<span class="tag vec"></span>](/types)&nbsp;two | Returns a new Vector that is a difference of `one` and `two` | [<span class="tag vec"></span>](/types#vector) (new)
-[<span class="tag vec"></span>](/types)&nbsp;one * [<span class="tag flo"></span>](/types)&nbsp;factor | Returns a new Vector that is `one` with each component multiplied by the factor. | [<span class="tag vec"></span>](/types#vector) (new)
+[<span class="tag vec"></span>](/types)&nbsp;one + [<span class="tag vec"></span>](/types)&nbsp;two | Returns a new Vector that is a sum of `one` and `two` | [<span class="tag vec"></span>](/types#vector) 
+[<span class="tag vec"></span>](/types)&nbsp;one - [<span class="tag vec"></span>](/types)&nbsp;two | Returns a new Vector that is a difference of `one` and `two` | [<span class="tag vec"></span>](/types#vector) 
+[<span class="tag vec"></span>](/types)&nbsp;one * [<span class="tag flo"></span>](/types)&nbsp;factor | Returns a new Vector that is `one` with each component multiplied by the factor. | [<span class="tag vec"></span>](/types#vector) 
 [<span class="tag vec"></span>](/types)&nbsp;one == [<span class="tag vec"></span>](/types)&nbsp;two | Returns a boolean whether `one` and `two` are very similiar to each other (less than ~0.03 difference in magnitude) | [<span class="tag boo"></span>](/types)
 
 ###Arithmetics and operators examples
+
 
 ```lua
 function onLoad()
@@ -129,6 +130,7 @@ string([<span class="tag str"></span>](/types)&nbsp;prefix) | Returns a formatte
 
 ###Property menothds examples
 
+
 ```lua
 function onLoad()
     local vec = Vector(1, 0, 1)
@@ -153,19 +155,19 @@ end
 
 Function Name | Description | Return | &nbsp;
 -- | -- | -- | --
-clamp(flo maxLen) | Shortens the Vector down to a maximum of `maxLen` if it is longer and returns self. | Vector (self)
-lerp(vec target, flo factor) | Linearly interpolates Vector between its current position and `target` depending on `factor` value and returns self. For example `factor` of 0.5 places it halfway between current position and `target`, and `factor` of 1 sets it to `target` exactly. Any value of `factor` is allowed, including negative and over 1. | Vector (self)
-moveTowards(vec target, flo maxLen) | Move a vector linearly towards `target`, but only up to a difference of `maxLen`, and return self. | Vector (self)
-normalize() | Scales a Vector so its length is exactly 1 and returns self. Does not do anything with zero Vector. | Vector (self)
-normalized() | Returns a new vector with the same direction and length of 1. | Vector (new)
-project(vec other) | Modifies a Vector to be a projection on `other` and returns self. | Vector (self)
-projectOnPlane(vec normal) | Modifies a Vector to be a projection on a plane defined by a normal vector `normal` and returns self. | Vector (self)
-reflect(vec normal) | Reflect a Vector over a plane defined by a normal Vector `normal` and return self. | Vector (self)
-rotateTowards(vec other, flo maxAngle) | Rotates a Vector towards `other` (over shortest path), but only up to an angle difference of `maxAngle`, and return self. | Vector (self)
-rotateTowardsUnit(vec other, flo maxAngle) | Same as rotateTowards, but only works correctly if `other` Vector is normalized. Less expensive than `rotateTowards`. | Vector (self)
-rotateOver(str axis, flo angle) | Rotate a Vector `angle` degress over given `axis` (can be `'x'`, `'y'`, `'z'`) and return self. | Vector (self)
+clamp([<span class="tag flo"></span>](/types)&nbsp;maxLen) | Shortens the Vector down to a maximum of `maxLen` if it is longer and returns self. | Vector 
+lerp([<span class="tag vec"></span>](/types)&nbsp;target, [<span class="tag flo"></span>](/types)&nbsp;factor) | Linearly interpolates Vector between its current position and `target` depending on `factor` value and returns self. For example `factor` of 0.5 places it halfway between current position and `target`, and `factor` of 1 sets it to `target` exactly. Any value of `factor` is allowed, including negative and over 1. | Vector 
+moveTowards([<span class="tag vec"></span>](/types)&nbsp;target, [<span class="tag flo"></span>](/types)&nbsp;maxLen) | Move a vector linearly towards `target`, but only up to a difference of `maxLen`, and return self. | Vector 
+normalize() | Scales a Vector so its length is exactly 1 and returns self. Does not do anything with zero Vector. | Vector 
+normalized() | Returns a new vector with the same direction and length of 1. | Vector 
+project([<span class="tag vec"></span>](/types)&nbsp;other) | Modifies a Vector to be a projection on `other` and returns self. | Vector 
+projectOnPlane([<span class="tag vec"></span>](/types)&nbsp;normal) | Modifies a Vector to be a projection on a plane defined by a normal vector `normal` and returns self. | Vector 
+reflect([<span class="tag vec"></span>](/types)&nbsp;normal) | Reflect a Vector over a plane defined by a normal Vector `normal` and return self. | Vector 
+rotateTowards([<span class="tag vec"></span>](/types)&nbsp;other, [<span class="tag flo"></span>](/types)&nbsp;maxAngle)) | Rotates a Vector towards `other` (over shortest path), but only up to an angle difference of `maxAngle`, and return self. | Vector 
+rotateTowardsUnit([<span class="tag vec"></span>](/types)&nbsp;other, [<span class="tag flo"></span>](/types)&nbsp;maxAngle) | Same as rotateTowards, but only works correctly if `other` Vector is normalized. Less expensive than `rotateTowards`. | Vector 
+rotateOver([<span class="tag str"></span>](/types)&nbsp;axis, [<span class="tag flo"></span>](/types)&nbsp;angle) | Rotate a Vector `angle` degress over given `axis` (can be `'x'`, `'y'`, `'z'`) and return self. | Vector 
 orthoNormalize() | Returns three unit Vectors, each one orthogonal to every other. The first returned Vector points in the same direction as this Vector. | Vector, Vector, Vector
-orthoNormalize(vec other) | Same as `orthoNormalize`, but the second returned Vector is guaranteed to be on a plane spanned by this Vector and `other`. | Vector, Vector, Vector
+orthoNormalize([<span class="tag vec"></span>](/types)&nbsp;other) | Same as `orthoNormalize`, but the second returned Vector is guaranteed to be on a plane spanned by this Vector and `other`. | Vector, Vector, Vector
 
 ###Manipulation examples
 
@@ -208,37 +210,4 @@ function onLoad()
         -1  -- indefinitely, until stopped because we reached destination
     )
 end
-```
----
-
-
-###frames(...)
-
-[<span class="ret int"></span>](/types)&nbsp;Activates a function after a set number of frames. The amount of time this takes is based off the Host's FPS. The higher their FPS, the faster this will trigger.
-
-> The returned value is an ID which can be used with [stop](#stop) to cancel the function at any time.
-
-!!!info "frames(toRunFunc, frameCount)"
-    * [<span class="tag fun"></span>](/types#function) **toRunFunc**: The function to activate once the condition is met.
-    * [<span class="tag int"></span>](/types) **frameCount**: The number of frames to wait before activating the above function.
-
-``` Lua
-function onLoad()
-	--Built-in functions with parameters can be called directly
-	--This is done by wrapping the function within `function()` and `end`
-	Wait.frames(function() print("One") end, 60)
-
-	--You can also call custom functions you have made yourself
-	--Pass them any parameters you wish
-	Wait.frames(function() sayTwo("Two") end, 120)
-
-	--If you aren't passing any parameters to the function, you can shorten it
-	Wait.frames(sayThree, 180)
-end
-
---Has its parameter passed to it
-function sayTwo(s) print(s) end
-
---Does not have any parameters passed to it
-function sayThree() print("Three") end
 ```
