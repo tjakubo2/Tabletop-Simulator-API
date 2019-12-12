@@ -82,39 +82,16 @@ Example: `printToAll("Test", "Green")`
 
 
 ###Vector
-<span class="tag vec"></span> Vector is a type of Table that is used to define a position, rotation or direction.
+<span class="tag vec"></span> Vector is a type of Table that is used to define a position, rotation or direction, with some functions attached for easier processing (see [Vector](vector) reference page for details).
 ####Keys
-The Table will contain the keys `x`, `y`, `z` and/or `1`, `2`, `3`. The letter and numeric keys are duplicates of each other.
+The Table components can be accessed using letter `x`, `y`, `z` and numeric `1`, `2`, `3` keys. Those are equivalent both for reading and assigning values like shown below. When iterating over this table components, only letter key/value pairs will be encountered.
 
  Letter Key | Number Key
  :--: | :--:
  x | 1
  y | 2
  z | 3
-
-
-As an example, An Object at coordinate X=5, Y=2, Z=-1 would return this table:
-``` Lua
-{
-    x=5, y=2, z=-1,
-    1=5, 2=2, 3=-1,
-}
-```
-
-####Mixed Keys
-
-
-Only one type of key, number or letter, is required. If both a are present in a Table, the numeric key is ignored and only the **letter key** is used.
-
-``` Lua
---Valid Table for 1 to the right
-{x=1, y=0, z=0}
---Valid Table for 1 unit forward
-{0, 0, 1}
---This Table would be for 1 unit to the right.
-{x=1, y=0, z=0, 0, 0, 1}
-```
-
+ 
 ####Value Range
 
 The range of values depend on the type of Vector you are using.
