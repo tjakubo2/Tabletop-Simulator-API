@@ -26,6 +26,7 @@ min([<span class="tag vec"></span>](/types)&nbsp;one, [<span class="tag vec"></s
 
 ###Constructors examples
 
+Test
 ```lua
 function onLoad()
     local vec1 = Vector.new(0.5, 1, 1.5)
@@ -56,6 +57,7 @@ copy() | Returns a separate Vector with identical component values. | [<span cla
     Before `Vector` was introduced, coordinate tables contained separate values under 1, 2, 3 and x, y, z keys, with letter keys taking precedence when they were different. This is no longer the case, and using letter and numerical keys is equivalent. However, when iterating over Vector components you have to use `pairs` and only letter keys will be read there.
 
 ###Element access examples
+
 
 ```lua
 function onLoad()
